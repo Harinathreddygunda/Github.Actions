@@ -1,0 +1,17 @@
+#Descriptive name for a workflow
+name: HelloWorld
+
+#Events: Trigger the workflow on commiting the code to main branch
+on:
+  push:
+    branches: [main]
+
+#A workflow can have atleast one job, each job has its own runner(selfhosted/Hosted)
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+#Steps to run all the defined tasks
+    steps:
+    - name: Greeetings
+      run: echo "Hello, World!!"
