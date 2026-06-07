@@ -2,9 +2,9 @@
 name: HelloWorld
 
 #Events: Trigger the workflow on commiting the code to main branch
-on:
-  push:
-    branches: [main]
+on: workflow_dispatch
+  # push:
+  #   branches: [main]
 
 #A workflow can have atleast one job, each job has its own runner(selfhosted/Hosted)
 jobs:
