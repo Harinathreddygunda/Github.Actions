@@ -1,0 +1,9 @@
+name: context variables demo
+on: workflow_dispatch
+jobs:
+  context_demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use cintext Variables
+        run: |
+          echo "These are the env variables ${{ toJson(github) }}"
