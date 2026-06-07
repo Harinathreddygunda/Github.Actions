@@ -5,15 +5,20 @@ jobs:
   build:
     outputs:
       version: ${{ steps.step1.outputs.version }}
+      version2: ${{ steps.step1.outputs.version2 }}
     runs-on: ubuntu-latest
     steps:
       - name: step1
         id: step1
-        run: echo "version=0.0.v2" >> $GITHUB_OUTPUT
+        run: | 
+          echo "version=0.0.v2" >> $GITHUB_OUTPUT
+          echo "version02=0.0.v02" >> $GITHUB_OUTPUT
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: step2
-        run: echo "The version is ${{ needs.build.outputs.version }}"
+        run: |
+          echo "The version is ${{ needs.build.outputs.version }}"
+          echo "The version is ${{ needs.build.outputs.version2 }}"
         
