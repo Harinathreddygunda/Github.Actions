@@ -1,6 +1,5 @@
 name: outputv1-demo
-on:
-  workflow_dispatch
+on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
