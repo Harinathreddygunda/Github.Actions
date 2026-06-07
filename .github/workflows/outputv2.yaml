@@ -21,4 +21,5 @@ jobs:
         run: |
           echo "The version is ${{ needs.build.outputs.version }}"
           echo "The version is ${{ needs.build.outputs.version2 }}"
+          echo "$GITHUB_REF"
         
