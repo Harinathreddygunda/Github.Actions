@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        run: echo "Checking out code for feature/* branch-static code analysis"
+        run: |
+          echo "Checking out code for feature/* branch-static code analysis"
+          exit 1
   dev-deploy:
     if: github.ref_name == 'develop' && github.event_name == 'push'
     runs-on: ubuntu-latest
